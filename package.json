@@ -1,0 +1,23 @@
+{
+  "name": "fis3_vue_tpl",
+  "version": "1.0.0",
+  "description": "基于vue的前端模块化项目模板",
+  "main": "app.js",
+  "scripts": {
+    "serverStart": "fis3 server start "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BQ-Team/fis3_vue_tpl.git"
+  },
+  "keywords": [
+    "vue",
+    "fis3"
+  ],
+  "author": "chonglu.wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BQ-Team/fis3_vue_tpl/issues"
+  },
+  "homepage": "https://github.com/BQ-Team/fis3_vue_tpl#readme"
+}

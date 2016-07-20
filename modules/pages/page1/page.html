@@ -1,0 +1,13 @@
+<div id="page1">
+    <b>列表页面</b>
+    <input type="file" accept="image/*" id="uploadFile" capture="camera"/>
+    <img id="img" alt="">
+    <ul class="shopList">
+    </ul>
+</div>
+
+<script type="html/tpl" class="itemTpl">
+    {{ for(var index in it) { var item=it[index]; }}
+        <li>{{=item.name}}{{=index}}</li>
+    {{ } }}
+</script>
