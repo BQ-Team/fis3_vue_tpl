@@ -1,0 +1,72 @@
+#home {
+  -webkit-overflow-scrolling: touch;
+  padding: 0px 10px;
+  padding-bottom: 50px;
+  -webkit-box-flex: 1;
+  flex: 1;
+  overflow-y: scroll;
+  em {
+    font-style: normal;
+  }
+  .storeList.activeClass {
+    background-color: darkred;
+  }
+  .storeList {
+    margin-top: 1rem;
+    border-bottom: 1px solid #e7e7e7;
+    .storePresent {
+      margin-bottom: 0.5rem;
+      .storeImg {
+        display: inline-block;
+        img {
+          width: 5rem;
+          height: 5rem;
+        }
+      }
+      .address {
+        float: right;
+        margin-right: 1.4rem;
+        margin-top: 0.5rem;
+        position: relative;
+        .radio {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          background: url(../../../static/images/icon-11.png) no-repeat;
+          background-size: cover;
+          position: absolute;
+          right: -25px;
+          top: -1px;
+        }
+        .active {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          background: url(../../../static/images/icon-12.png) no-repeat;
+          background-size: cover;
+          position: absolute;
+          right: -25px;
+          top: -1px;
+        }
+        h3 {
+          font-size: 18px;
+          color: #333333;
+        }
+        p {
+          font-size: 15px;
+          color: #666666;
+          margin-top: 0.5rem;
+        }
+        .storeNum {
+          font-size: 15px;
+          color: #999;
+          margin-top: 0.5rem;
+          .storeKm {
+            position: absolute;
+            right: -1rem;
+          }
+        }
+      }
+    }
+  }
+}

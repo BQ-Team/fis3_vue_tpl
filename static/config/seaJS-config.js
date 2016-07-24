@@ -4,11 +4,14 @@
 // seajs 的简单配置
 seajs.config({
     base: "/",
+    paths:{
+
+    },
     alias: {
         "config": "/static/config/config",
         "store": "/static/js/store",
         "util": "/static/js/comm",
-        "baseModule":'/modules/common/basePage',
-        "baseDialogModule":'/modules/common/baseDialogPage'
+        "basePage":'/modules/common/basePage',
+        "baseDialogPage":'/modules/common/baseDialogPage'
     }
 });

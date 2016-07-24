@@ -2,8 +2,16 @@
     padding:0;
     margin:0
 }
-#header{
-    background-color: dodgerblue;
+a{
+    text-decoration: none;
+}
+html,body{
+    font-size: 20px;
+    background: #ffffff;
+    height: 100%;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    box-orient:vertical;//垂直排列
 }
 .hide{
     display: none;

@@ -75,7 +75,6 @@ define(function (require, exports, module) {
                 type: opts.type,
                 url: config.serviceHost + opts.url,
                 data: opts.data,
-                dataType: "jsonp",
                 success: function (data) {
                     //返回数据格式如下：
                     //{

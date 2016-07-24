@@ -19,11 +19,6 @@ fis.match('*.scss', {
 //加载方式 cmd同步加载  amd异步加载
 fis.hook('cmd');
 
-//非模块的文件
-fis.match('/static/js/sea.js', {
-    isMod: false
-});
-
 //公用部分
 var commCss = [
     '/static/css/comm.css',
@@ -32,11 +27,11 @@ var commCss = [
 ];
 var commJs = [
     "/static/js/sea.js",
-    "/static/config/seaJS-config.js",
     "/static/config/config.js",
+    "/static/config/seaJS-config.js",
+    "/node_modules/vue/dist/vue.min.js",
     "/node_modules/zepto/dist/zepto.min.js",
     "/node_modules/director/build/director.min.js",
-    "/node_modules/dot/doT.min.js",
     '/app.js'
 ];
 

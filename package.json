@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/BQ-Team/fis3_vue_tpl/issues"
   },
-  "homepage": "https://github.com/BQ-Team/fis3_vue_tpl#readme"
+  "homepage": "https://github.com/BQ-Team/fis3_vue_tpl#readme",
+  "dependencies": {
+    "director": "^1.2.8",
+    "requirejs": "^2.2.0",
+    "seajs": "^3.0.2",
+    "vue": "^1.0.26",
+    "zepto": "^1.2.0"
+  }
 }
