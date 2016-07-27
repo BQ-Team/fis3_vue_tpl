@@ -1,25 +1,63 @@
 <div id="home">
-    <br>
-    <ul>
-        <li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"
-            :class="{'activeClass':$index==selectIndex }">
-            <h3>{{item.address}}{{$index}}</h3>
-        </li>
-        <li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"
-            :class="{'activeClass':$index==selectIndex }">
-            <h3>{{item.address}}{{$index}}</h3>
-        </li>
-        <li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"
-            :class="{'activeClass':$index==selectIndex }">
-            <h3>{{item.address}}{{$index}}</h3>
-        </li>
-    </ul>
-    <br><br>
-    <div class="storeList" v-if="list&&list.length>0">
-        哇，數據好多
+    <div class="page">
+        <!-- 标题栏 -->
+        <div class="storeSet">
+            <a class="peopleManage">
+                <span class="icon"></span>
+                <p class="label">换轮胎</p>
+            </a>
+            <a class="workingHours" >
+                <span class="icon1"></span>
+                <p class="label">洗车</p>
+            </a>
+            <a class="carType" >
+                <span class="icon2"></span>
+                <p class="label">小保养</p>
+            </a>
+            <a class="balanceSet" >
+                <span class="icon3"></span>
+                <p class="label">大保养</p>
+            </a>
+            <a class="bespokeSet" >
+                <span class="icon4"></span>
+                <p class="label">钣金修理</p>
+            </a>
+            <a class="printerSet" >
+                <span class="icon5"></span>
+                <p class="label">上门预约</p>
+            </a>
+        </div>
     </div>
-    <div class="storeList" v-else>
-        唉，沒有數據
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!--<ul>-->
+        <!--<li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"-->
+            <!--:class="{'activeClass':$index==selectIndex }">-->
+            <!--<h3>{{item.address}}{{$index}}</h3>-->
+        <!--</li>-->
+        <!--<li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"-->
+            <!--:class="{'activeClass':$index==selectIndex }">-->
+            <!--<h3>{{item.address}}{{$index}}</h3>-->
+        <!--</li>-->
+        <!--<li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"-->
+            <!--:class="{'activeClass':$index==selectIndex }">-->
+            <!--<h3>{{item.address}}{{$index}}</h3>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <!--<div class="storeList" v-if="list&&list.length>0">-->
+        <!--哇，數據好多-->
+    <!--</div>-->
+    <!--<div class="storeList" v-else>-->
+        <!--唉，沒有數據-->
+    <!--</div>-->
 
 </div>
