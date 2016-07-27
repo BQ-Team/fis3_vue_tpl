@@ -17,7 +17,6 @@ html,body{
     display: none;
 }
 #dialogBox{
-    display: none;
     background-color: rgba(102,102,102,0.8);
     position: fixed;
     top:0;

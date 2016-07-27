@@ -2,18 +2,35 @@
 // * Created by zyc on 2016/6/20.
 // * base页面模块
 // */
-//define(function (require, exports, module) {
-//
-//    var baseModule = require('baseModule');
-//    var util = require("util");
-//    module.exports = $.extend({}, baseModule, {
-//        //组件init 仅执行一次
-//        show:false,
-//        isDialogPage:true,
-//        hideDialog: function () {
-//            util.logger.log("隱藏模式窗口", this.title);
-//            this.html.parent().removeClass(this.positionCss).parent().hide();
-//            this.show = false;
-//        }
-//    });
-//});
+define(function (require, exports, module) {
+    var util = require("util");
+    var basePage = require("basePage");
+    module.exports = Vue.extend({
+        mixins: [basePage],
+        data: function () {
+
+        },
+        ready: function () {
+            util.logger.log(this.$options.title, "，初始化完成");
+        },
+        attached: function () {
+            //设置参数
+            this.params = this.$parent.dialogPageParams;
+            util.logger.log(this.$options.title, "，进入");
+
+        },
+        detached: function () {
+            util.logger.log(this.$options.title, "，离开");
+        },
+        methods: {
+            /**
+             * 隐藏彈出框页面
+             */
+            hideDialog: function () {
+                this.$parent.currentDialogView = "";
+            }
+
+        }
+    })
+    ;
+});

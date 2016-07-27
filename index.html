@@ -12,12 +12,17 @@
 <body>
 <c-header></c-header>
 <div id="main">
-    <component :is="currentView" :params="pageParams" keep-alive>
-        <!-- 组件在 vm.currentview 变化时改变 -->
+    <!--主体-->
+    <component :is="currentView" keep-alive>
     </component>
-</div>
-<div id="dialogBox">
-    <div class="dialogContent"></div>
+
+    <!--弹框-->
+    <div id="dialogBox" v-if="currentDialogView">
+        <div class="dialogContent" :class="dialogPositionClass">
+            <component :is="currentDialogView" keep-alive>
+            </component>
+        </div>
+    </div>
 </div>
 <script src="static/js/sea.js"></script>
 <script>
