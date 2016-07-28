@@ -19,7 +19,7 @@ define(function (require, exports, module) {
         },
         attached: function () {
 
-            util.logger.log(this.title+" 進入,參數", this.params);
+            util.logger.log(this.$options.title+" 進入,參數", this.params);
         },
         detached: function () {
 
