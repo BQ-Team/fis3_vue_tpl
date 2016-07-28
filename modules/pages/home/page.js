@@ -37,7 +37,7 @@ define(function (require, exports, module) {
         methods: {
             showMsg: function (item, index, e) {
                 item.id = index;
-                this.$parent.showPage("pages/detail", index);
+                this.showPage("pages/detail", item);
                 this.selectIndex = index;
             }
         }
