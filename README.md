@@ -3,14 +3,13 @@
 **基本框架：** fis3(构建工具) + vue（框架） + zepto（类库） + seaJs（模块化） + director（路由）
 
 ```bash
-打開項目後，如下步驟運行：
+运行项目，步骤如下（预先安装nodeJS）：
 npm install   安裝package.json內必要的褲
 npm install -g fis3 安裝fis3
 
-
-fis3 release -wL   啓動代碼自動部署監聽
-                  （fis3 release過程中會遇到發佈失敗，需要一些依賴參見，按照提示安裝需要的插件即可）
-fis3 server start  啓動fis3服務，預覽項目
+fis3 release -wL   启动代码发布，自动监听变化发布，自动刷新浏览器
+                  （fis3 release会遇到失败，提示依赖某些插件，根据提示安装对应插件即可）
+fis3 server start  启动fis3服务，即可预览
 
 ```
 
@@ -21,7 +20,7 @@ project
   ├─ modules     工程模块
   │  ├─ common  公共模块
   │  │  └─ baseDialogPage 模态窗口基类
-  │  │  └─ basePage       所有项目模块基类
+  │  │  └─ basePage       所有模块基类
   │  ├─ components         独立组件
   │  │  ├─ header
   │  │  └─ .....
