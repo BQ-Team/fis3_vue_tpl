@@ -14,5 +14,5 @@ fis3 server start  啓動fis3服務，預覽項目
 ```
 
 
-[Vue官网](http://cn.vuejs.org/guide/installation.html) 
-[Fis3官网](http://fis.baidu.com/) 
+ - [Vue官网](http://cn.vuejs.org/guide/installation.html) 
+ - [Fis3官网](http://fis.baidu.com/) 
