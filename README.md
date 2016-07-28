@@ -8,7 +8,8 @@ npm install   安裝package.json內必要的褲
 npm install -g fis3 安裝fis3
 
 
-fis3 release -wL   啓動代碼自動部署監聽    （fis3 release過程中會遇到發佈失敗，需要一些依賴參見，按照提示安裝需要的插件即可）
+fis3 release -wL   啓動代碼自動部署監聽
+                  （fis3 release過程中會遇到發佈失敗，需要一些依賴參見，按照提示安裝需要的插件即可）
 fis3 server start  啓動fis3服務，預覽項目
 
 ```
