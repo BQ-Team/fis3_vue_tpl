@@ -13,7 +13,7 @@ define(function (require, exports, module) {
     ];
     require.async(components, function () {
 
-        // 创建全局跟组件app
+        // 创建全局根组件app
         var app = new Vue({
             el: 'body',
             data: function () {

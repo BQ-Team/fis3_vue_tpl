@@ -16,22 +16,22 @@ define(function (require, exports, module) {
             }
         },
         ready: function () {
-            var self = this;
-            util.ajaxRequest({
-                url: "services/getStoreAddress",
-                data: {
-                    page: 1
-                },
-                success: function (d) {
-                    self.list = d.data;
-                }
-            });
+            //var self = this;
+            //util.ajaxRequest({
+            //    url: "services/getStoreAddress",
+            //    data: {
+            //        page: 1
+            //    },
+            //    success: function (d) {
+            //        self.list = d.data;
+            //    }
+            //});
 
         },
         attached: function () {
 
         },
-        detached: function () {
+        detached: function () {  //删除
 
         },
         methods: {
