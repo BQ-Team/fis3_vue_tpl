@@ -18,8 +18,12 @@ define(function (require, exports, module) {
             el: 'body',
             data: function () {
                 return {
-                    currentView: "",
-                    pageParams: undefined
+                    currentView: "",//当前主体组件名称
+                    currentViewHash:"",//当前主体组件location hash
+                    currentDialogView: "",//当前弹框组件名称
+                    pageParams: undefined,  //主体组件参数
+                    dialogPageParams: undefined, //弹框组件参数
+                    dialogPositionClass: "" //弹框组件位置
                 };
             },
             components: {}
@@ -39,6 +43,7 @@ define(function (require, exports, module) {
             //加载动态数据，需用async
             require.async([moduleJs], function (mod) {
                 app.currentView = moduleUrl;
+                app.currentViewHash = window.location.hash;
                 app.pageParams = !data ? undefined : JSON.parse(decodeURIComponent(data));
                 if (!app.$options.components[moduleUrl]) {
                     app.$options.components[moduleUrl] = mod;
@@ -50,7 +55,14 @@ define(function (require, exports, module) {
         var routesConfig = {
             "/:moudle/:page/?((\w|.)*)": {
                 before: function (moudle, page, data) {
-
+                    //如果有弹出框  则关闭弹出框
+                    if (app.currentDialogView) {
+                        if(window.location.hash==app.currentViewHash){
+                            app.currentDialogView = "";
+                        }
+                        window.location.hash = app.currentViewHash;//当前模块路径
+                        return false;
+                    }
                 },
                 on: function (moudle, page, data) {
                     //记录当前模块
@@ -69,7 +81,6 @@ define(function (require, exports, module) {
         //跳转页面
         app.showPage = function (url, param) {
             router.setRoute(dataToUrl(url, param));
-
         };
 
         /**
@@ -78,8 +89,8 @@ define(function (require, exports, module) {
          * @data 参数
          * @position 弹出框口位置，枚举值：center、top、bottom .默认为center
          */
-        app.showDialogPage = function (url, data, position) {
-            util.logger.log("加载弹出模块：{0}  ,参数：{1}".format(url, data));
+        app.showDialog = function (url, data, position) {
+            util.logger.log("加载弹出模块:{0} ,参数: ".format(url), data);
             var positionCssClass = {
                 top: "positionTop",
                 center: "positionCenter",
@@ -89,9 +100,12 @@ define(function (require, exports, module) {
             var moduleJs = "./modules/{0}/page.js".format(url);
             //加载动态数据，需用async
             require.async([moduleJs], function (mod) {
-                mod.show = true;//显示
-                mod.positionCss = cssClass;
-                window.currentDialogModule = mod;//保存当前模块
+                app.currentDialogView = url;
+                app.dialogPositionClass = cssClass;
+                app.dialogPageParams = data;
+                if (!app.$options.components[url]) {
+                    app.$options.components[url] = mod;
+                }
             });
         }
     });
