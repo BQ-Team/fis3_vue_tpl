@@ -99,6 +99,9 @@ define(function (require, exports, module) {
             var cssClass = positionCssClass[position] || "positionCenter";
             var moduleJs = "./modules/{0}/page.js".format(url);
             //加载动态数据，需用async
+            /**
+             * 路径 弹窗 参数传递
+             * **/
             require.async([moduleJs], function (mod) {
                 app.currentDialogView = url;
                 app.dialogPositionClass = cssClass;

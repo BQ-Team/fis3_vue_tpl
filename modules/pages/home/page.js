@@ -35,10 +35,8 @@ define(function (require, exports, module) {
 
         },
         methods: {
-            showMsg: function (item, index, e) {
-                item.id = index;
-                this.showPage("pages/list", item);
-                this.selectIndex = index;
+            showMsg: function () {
+                this.showPage("pages/list");
             }
 
         }
