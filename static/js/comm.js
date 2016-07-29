@@ -26,7 +26,7 @@ define(function (require, exports, module) {
             }
         }
         return result;
-    }
+    };
 
 
     var config = require("config");
