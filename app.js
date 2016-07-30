@@ -32,19 +32,19 @@ define(function (require, exports, module) {
         //地址和参数转换成hashUrl
         function dataToUrl(url, param) {
             param = typeof param == "object" ? encodeURIComponent(JSON.stringify(param)) : param;
-            return '{0}/{1}'.format(url, param);
+            return '{0}/{1}'.format(url, param);//返回路径 ，参数
         }
 
         //路由模块跳转请求
         function routeRequire(moudle, page, data) {
             util.logger.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
-            var moduleJs = "./modules/{0}/{1}/page.js".format(moudle, page);
+            var moduleJs = "./modules/{0}/{1}/page.js".format(moudle, page);//模块 ,
             var moduleUrl = "{0}/{1}".format(moudle, page);
             //加载动态数据，需用async
             require.async([moduleJs], function (mod) {
                 app.currentView = moduleUrl;
-                app.currentViewHash = window.location.hash;
-                app.pageParams = !data ? undefined : JSON.parse(decodeURIComponent(data));
+                app.currentViewHash = window.location.hash;     //hash
+                app.pageParams = !data ? undefined : JSON.parse(decodeURIComponent(data)); //参数
                 if (!app.$options.components[moduleUrl]) {
                     app.$options.components[moduleUrl] = mod;
                 }
@@ -74,7 +74,7 @@ define(function (require, exports, module) {
         };
 
         var router = new Router(routesConfig);
-        var homePage = sessionStorage.getItem("currentMoudleHash") || "/pages/home";
+        var homePage = sessionStorage.getItem("currentMoudleHash") || "/pages/list";
         router.setRoute(homePage);//设置默认首页
         router.init();//路由初始化
 

@@ -2,7 +2,8 @@
     <div class="page">
         <!-- 标题栏 -->
         <div class="storeSet">
-            <a class="peopleManage" @click="showMsg">
+            <a class="peopleManage" @click="showMsg(item,$index,$event)"
+               :class="{'activeClass':$index==selectIndex }">
                 <span class="icon"></span>
                 <p class="label">换轮胎</p>
             </a>

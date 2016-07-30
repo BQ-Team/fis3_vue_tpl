@@ -35,8 +35,10 @@ define(function (require, exports, module) {
 
         },
         methods: {
-            showMsg: function () {
-                this.showPage("pages/list");
+            showMsg: function (item, index, e) {
+                item.id = index;
+                this.showPage("pages/list", item);
+                this.selectIndex = index;
             }
 
         }
