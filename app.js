@@ -9,6 +9,8 @@ define(function (require, exports, module) {
 
     //全局公共组件
     var components = [
+        "/modules/extend/filters.js",
+        "/modules/extend/directive.js",
         "/modules/components/header/page"
     ];
     require.async(components, function () {

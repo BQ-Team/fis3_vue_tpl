@@ -11,22 +11,26 @@ define(function (require, exports, module) {
         template: __inline("./page.html"),
         data: function () {
             return {
-
+                cityCode: "100001",
+                cityList:[]
             }
         },
         ready: function () {
             var self = this;
-
+            var store = require("store");
+            this.cityList = store.cityData;
         },
         attached: function () {
-
+            this.cityCode = this.params.city;
         },
         detached: function () {
 
         },
         methods: {
-            select: function () {
-               this.hideDialog();
+            select: function (city) {
+                var self = this;
+                this.params.ok(city.code);
+                this.hideDialog();
             }
         }
     });

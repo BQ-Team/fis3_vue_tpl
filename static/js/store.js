@@ -6,16 +6,20 @@ define(function (require, exports, module) {
     //全局对象
     module.exports = {
 
-        loginUser:{
-
-        },
+        loginUser: {},
         //保险分类
-        baoxianType:{
-            1:"A保险",
-            2:"B保险",
-            3:"C保险"
-        }
-
+        baoxianType: {
+            1: "A保险",
+            2: "B保险",
+            3: "C保险"
+        },
+        //全国城市数据
+        cityData: [
+            {code: "100001", name: "北京", citys: []},
+            {code: "100002", name: "上海", citys: []},
+            {code: "100003", name: "深圳", citys: []},
+            {code: "100004", name: "重庆", citys: []}
+        ]
 
     };
 

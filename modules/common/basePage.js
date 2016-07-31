@@ -15,11 +15,12 @@ define(function (require, exports, module) {
         },
         attached: function () {
             //设置参数
-            this.params = this.$parent.pageParams;
-
+            if (this.$parent.currentDialogView) {
+                this.params = this.$parent.dialogPageParams;
+            } else {
+                this.params = this.$parent.pageParams;
+            }
             util.logger.log(this.$options.title, "，进入");
-
-
         },
         detached: function () {
             util.logger.log(this.$options.title, "，离开");

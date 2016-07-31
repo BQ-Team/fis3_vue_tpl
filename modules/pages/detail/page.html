@@ -3,6 +3,15 @@
     <ul class="shopList">
         <li>
         </li>
-        <input type="button" @click="showSelectCity" value="选择城市" />
+        <input type="button" @click="showSelectCity" value="选择城市"/>{{cityCode}} ==><span>{{cityCode|cityFormat}}</span>
+
+        <br>
+        <br>
+        <input type="text" v-model="inputMoney|currencyDisplay" v-validate-monty>
+        {{inputMoney}}
+
+        <input type="text" v-validate-monty>
+        <input type="text" v-validate-monty>
+        <input type="text" v-validate-monty>
     </ul>
 </div>

@@ -14,8 +14,7 @@ define(function (require, exports, module) {
             util.logger.log(this.$options.title, "，初始化完成");
         },
         attached: function () {
-            //设置参数
-            this.params = this.$parent.dialogPageParams;
+
             util.logger.log(this.$options.title, "，进入");
 
         },
