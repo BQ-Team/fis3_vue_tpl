@@ -2,8 +2,7 @@
     <div class="page">
         <!-- 标题栏 -->
         <div class="storeSet">
-            <a class="peopleManage" @click="showMsg(item,$index,$event)"
-               :class="{'activeClass':$index==selectIndex }">
+            <a class="peopleManage" @click="showMsg">
                 <span class="icon"></span>
                 <p class="label">换轮胎</p>
             </a>
@@ -40,25 +39,5 @@
 
 
 
-    <!--<ul>-->
-        <!--<li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"-->
-            <!--:class="{'activeClass':$index==selectIndex }">-->
-            <!--<h3>{{item.address}}{{$index}}</h3>-->
-        <!--</li>-->
-        <!--<li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"-->
-            <!--:class="{'activeClass':$index==selectIndex }">-->
-            <!--<h3>{{item.address}}{{$index}}</h3>-->
-        <!--</li>-->
-        <!--<li class="storeList" v-for="item in list" @click="showMsg(item,$index,$event)"-->
-            <!--:class="{'activeClass':$index==selectIndex }">-->
-            <!--<h3>{{item.address}}{{$index}}</h3>-->
-        <!--</li>-->
-    <!--</ul>-->
-    <!--<div class="storeList" v-if="list&&list.length>0">-->
-        <!--哇，數據好多-->
-    <!--</div>-->
-    <!--<div class="storeList" v-else>-->
-        <!--唉，沒有數據-->
-    <!--</div>-->
 
 </div>

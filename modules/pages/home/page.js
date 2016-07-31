@@ -16,16 +16,7 @@ define(function (require, exports, module) {
             }
         },
         ready: function () {
-            //var self = this;
-            //util.ajaxRequest({
-            //    url: "services/getStoreAddress",
-            //    data: {
-            //        page: 1
-            //    },
-            //    success: function (d) {
-            //        self.list = d.data;
-            //    }
-            //});
+
 
         },
         attached: function () {
@@ -37,7 +28,7 @@ define(function (require, exports, module) {
         methods: {
             showMsg: function (item, index, e) {
                 item.id = index;
-                this.showPage("pages/list", item);
+                this.showPage("pages/brand", item);
                 this.selectIndex = index;
             }
 

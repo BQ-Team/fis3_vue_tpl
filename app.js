@@ -74,7 +74,7 @@ define(function (require, exports, module) {
         };
 
         var router = new Router(routesConfig);
-        var homePage = sessionStorage.getItem("currentMoudleHash") || "/pages/list";
+        var homePage = sessionStorage.getItem("currentMoudleHash") || "/pages/brand";
         router.setRoute(homePage);//设置默认首页
         router.init();//路由初始化
 
