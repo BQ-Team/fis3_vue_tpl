@@ -26,7 +26,7 @@ define(function (require, exports, module) {
         },
         methods: {
             showSelectCity: function () {
-                this.showDialog("pages/selectCity",{},"bottom");
+                this.showDialog("pages/selectCity",{},"");
             }
         }
     });
