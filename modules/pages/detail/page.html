@@ -1,9 +1,88 @@
-<div id="page2">
-    <b>详情</b>
-    <ul class="shopList">
-        <li>
-            BBBBBB
-        </li>
-        <input type="button" @click="showSelectCity" value="选择城市" />
-    </ul>
+<div id="page2" >
+    <div class="swiper-container swiper-container-horizontal">
+        <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-2500px, 0px, 0px);">
+            <div v-for="url in bannerList" class="swiper-slide"><img v-bind:src="url" alt=""></div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+        </div>
+    </div>
+    <div class="information" :class="shopdetail">
+        <div class="info">
+            <p>{{item.name}}</p>
+        </div>
+        <div class="tip">
+            <p>每单最多购买两件</p>
+        </div>
+        <div class="price">
+            <p>￥{{item.price}} <del>￥{{item.Marketprice}}</del><span>{{item.buyCount}}人购买</span></p>
+        </div>
+        <div class="info-er">
+            <div class="info-1"><img src="../../../static/images/sel.png" alt=""><p>正品低价</p></div>
+            <div class="info-2"><img src="../../../static/images/sel.png" alt=""><p>快递包邮</p></div>
+            <div class="info-3"><img src="../../../static/images/sel.png" alt=""><p>免费到店服务</p></div>
+        </div>
+    </div>
+    <div class="store">
+        <div class="suit">
+            <p>适用门店</p>
+        </div>
+        <div class="service">
+            <div class="address">
+                <div class="service-point">
+                    <p class="service-e">{{item.service}}</p>
+                    <p class="distance"><span>离你最近</span>{{item.distance}}km</p>
+                </div>
+                <p class="address-v">{{item.address}}</p>
+            </div>
+            <div class="call"><img src="../../../static/images/call.png" alt=""><a href="tel:10086"></a></div>
+        </div>
+        <div class="more">
+            <p>更多门店（同城<span>8</span>家 共<span>30</span>家）</p>
+            <a href="#" class="and-more"></a>
+        </div>
+    </div>
+
+    <div class="notice">
+        <div class="title"><p>购买须知</p></div>
+        <div class="content">
+            <p><span>配送范围：</span>该商品新疆，西藏，港澳台不进行配送。</p>
+            <p><span>退换货说明：</span>如有退换货需求，请直接联系商家。</p>
+            <p><span>购买流程：</span>该商品商家包邮，只要填写自己的收货地址，支付成功后，商家会在3天左右发货，15天左右即可收货。</p>
+        </div>
+    </div>
+    <div class="empty"><p></p></div>
+    <div class="explain">
+        <div class="exp-1"><P>商品说明</P></div>
+        <div class="explain-info">
+            <div class="exp-2">
+                <ul>
+                    <li>主镜头光圈</li>
+                    <li>屏幕尺寸</li>
+                    <li>影像分辨率</li>
+                    <li>拍照像素</li>
+                </ul>
+            </div>
+            <div class="exp-3">
+                <ul>
+                    <li>F2.8</li>
+                    <li>3.0英寸</li>
+                    <li>1080P</li>
+                    <li>1200万</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="drag">
+        <div class="line"><p>继续拖动，查看图片说明</p></div>
+
+    </div>
+    <div class="buy">
+        <div class="buy-now">
+            <a href="#/pages/submit-orders" class="buynow">立即购买</a>
+        </div>
+        <div class="contact">
+            <a href="#" >联系商家</a>
+        </div>
+
+    </div>
 </div>

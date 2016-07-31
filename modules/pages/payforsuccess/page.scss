@@ -1,0 +1,116 @@
+#success{
+  background:#ffffff;
+
+  .pay-success{
+    height:125px;
+    background-color: #f5f5f5;
+    p{
+      line-height:125px;
+      text-align: center ;
+    }
+    img{
+      width:20px;
+      height:20px;
+      vertical-align:middle;
+    }
+  }
+  .adress{
+    border-top:1px solid #e5e5e5;
+    display:-webkit-box;
+    height:68px;
+    .fuwu{
+      padding-top:10px;
+      -webkit-box-flex:1;
+      p {
+        font-size: .8rem;
+        padding-left:10px;
+      }
+      .fu-code{
+        color:#fd9225;
+        font-size:.7rem;
+        padding-top: 10px;
+      }
+      span{
+        color:#FD9225;
+        font-size:.8rem;
+      }
+    }
+    .call{
+      border-left:1px solid #e5e5e5;
+      height:50px;
+      margin-top:10px;
+      width:50px;
+      a{
+        height:50px;
+        width:30px;
+        display:inline-block;
+        img{
+          margin-top: 4px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  .ser-code{
+    border-top:1px solid #e5e5e5;
+    font-family: "Microsoft Yahei";
+    .srr-co{
+     height:70px;
+      line-height:70px;
+      padding-left:10px;
+      color:#999999;
+    }
+    .ser-l{
+      height:30px;
+      .code-1{
+        float:left;
+        padding-left: 8px;
+      }
+      .not-u{
+        float:right;
+        padding-right: 8px;
+        color:#999999;
+      }
+
+    }
+    .code-1{
+      height:30px;
+      float:left;
+    }
+    .not-u{
+      height:30px;
+      float:right;
+    }
+    .clear{
+      clear:both;
+    }
+  }
+  .see{
+    height:7.5rem;
+    width:100%;
+    margin-top:100px;
+    display: -webkit-box;
+    background-color: #f5f5f5;
+    a{
+      margin-top:50px;
+      display:block;
+      height:2.2rem;
+      width:6.4rem;
+      text-align: center;
+      border-radius:3px;
+      border:1px solid #e5e5e5;
+      background-color:#ffffff;
+      font-family: "Microsoft Yahei";
+      font-size:1.5rem;
+      color:black;
+    }
+    .buy{
+      -webkit-box-flex:1;
+      margin-left:.8rem;
+    }
+    .see-order{
+      -webkit-box-flex:1;
+      margin-left:.8rem;
+    }
+  }
+}

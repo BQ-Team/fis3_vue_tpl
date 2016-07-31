@@ -1,72 +1,86 @@
-#home {
-  -webkit-overflow-scrolling: touch;
-  padding: 0px 10px;
-  padding-bottom: 50px;
-  -webkit-box-flex: 1;
-  flex: 1;
-  overflow-y: scroll;
-  em {
-    font-style: normal;
+
+#page1 {
+  //font-family: "Microsoft Yahei";
+  .swiper-wrapper img {
+    width: 100%;
+    height: 122px;
   }
-  .storeList.activeClass {
-    background-color: darkred;
-  }
-  .storeList {
-    margin-top: 1rem;
-    border-bottom: 1px solid #e7e7e7;
-    .storePresent {
-      margin-bottom: 0.5rem;
-      .storeImg {
-        display: inline-block;
-        img {
-          width: 5rem;
-          height: 5rem;
+  .list {
+    border-bottom: 1px solid #bebebe;
+    li {
+      padding: 12px 10px;
+      display: -webkit-box;
+      height: 77px;
+      border-bottom: 1px solid #bebebe;
+      .shopImage {
+        width: 88px;
+        height:88px;
+        span{
+          height: 20px;
+          position: relative;
+          margin-top: -23px;
+          display: block;
+          width: 77px;
+          background-color: #303030;
+          opacity: .74;
+          color: #ffffff;
+          text-align: center;
+          line-height: 20px;
+          font-family: "Microsoft Yahei";
+          font-weight: 200;
         }
       }
-      .address {
-        float: right;
-        margin-right: 1.4rem;
-        margin-top: 0.5rem;
-        position: relative;
-        .radio {
-          display: inline-block;
-          width: 22px;
-          height: 22px;
-          background: url(../../../static/images/icon-11.png) no-repeat;
-          background-size: cover;
-          position: absolute;
-          right: -25px;
-          top: -1px;
+      img {
+        width: 77px;
+        height: 77px;
+      }
+      .blurb {
+        font-size: 12px;
+        -webkit-box-flex: 1;
+        .instruction {
+          margin-top: 8px;
+          span {
+            border: 1px solid;
+            border-radius: 3px;
+            padding:2px 4px;
+            margin-right: 7px;
+            font-size: 9px;
+          }
+          .ins-1 {
+            color: #70B436;
+          }
+          .ins-2 {
+            color: #e31311;
+          }
+          .ins-3 {
+            color: #fb7904;
+          }
         }
-        .active {
-          display: inline-block;
-          width: 22px;
-          height: 22px;
-          background: url(../../../static/images/icon-12.png) no-repeat;
-          background-size: cover;
-          position: absolute;
-          right: -25px;
-          top: -1px;
-        }
-        h3 {
-          font-size: 18px;
-          color: #333333;
-        }
-        p {
-          font-size: 15px;
-          color: #666666;
-          margin-top: 0.5rem;
-        }
-        .storeNum {
-          font-size: 15px;
-          color: #999;
-          margin-top: 0.5rem;
-          .storeKm {
-            position: absolute;
-            right: -1rem;
+        .price {
+          position: relative;
+          margin-bottom: 0;
+          color: #999999;
+          margin-top: 10px;
+
+          .price-1 {
+            color: #fd9225;
+            font-size: 13px;
+            font-family: "Microsoft Yahei";
+          }
+          .price-2{
+            font-size:12px;
+          }
+          .price-3{
+            float:right;
+            font-size:12px;
+            display: block;
           }
         }
       }
     }
   }
 }
+
+
+
+

@@ -11,22 +11,35 @@ define(function (require, exports, module) {
         template: __inline("./page.html"),
         data: function () {
             return {
-                list: [],
-                selectIndex: -1
+                bannerList: [],
+                shopList: []
             }
         },
         ready: function () {
             var self = this;
+            //
             util.ajaxRequest({
-                url: "services/getStoreAddress",
-                data: {
-                    page: 1
-                },
+                url: "services/getBannerList",
                 success: function (d) {
-                    self.list = d.data;
+                    self.bannerList = d.data;
+                    Vue.nextTick(function () {
+                        self.swiperInit();
+                    });
                 }
             });
 
+            util.ajaxRequest({
+                url: "serevers/shopList",
+                data: {
+                    page: 1
+                },
+                success: function (e) {
+                    self.shopList = e.data;
+                   /* Vue.nextTick(function () {
+                        self.droploadInit();
+                    });*/
+                }
+            });
         },
         attached: function () {
 
@@ -35,10 +48,49 @@ define(function (require, exports, module) {
 
         },
         methods: {
-            showMsg: function (item, index, e) {
-                item.id = index;
-                this.showPage("pages/detail", item);
-                this.selectIndex = index;
+            //
+            swiperInit: function () {
+                  new Swiper(".swiper-container", {
+                    direction: "horizontal",
+                    loop: true,
+                    autoplay: 3000,
+                    autoplayDisableOnInteraction: false,
+                    pagination: ".swiper-pagination"
+                });
+            },
+
+            droploadInit: function () {
+                var self = this;
+                self.$parent.dropload({
+                    loadUpFn: function (dropload) {
+                        console.log("下拉");
+                        self.getStoreAddress(true, dropload);
+                    },
+                    loadDownFn: function (dropload) {
+                        console.log("上拉");
+                        self.getStoreAddress(false, dropload);
+                    }
+                });
+            },
+            getStoreAddress: function (isReload, dropload) {
+                var self = this;
+                if (isReload)self.data.page = 1;
+                util.ajaxRequest({
+                    url: "services/getStoreAddress",
+                    data: {
+                        page: self.data.page
+                    },
+                    success: function (d) {
+                        self.dataBind(".storeItemTpl", d.data, ".storeListBox", isReload);//模板，数据，目标，
+                        dropload.resetload();//重置上拉下拉控件
+                        if (!isReload) {
+                            self.data.page++;
+                        }
+                    }
+                });
+            },
+            goDetail: function (item) {
+                this.$parent.showPage("pages/detail", item.id);
             }
         }
     });

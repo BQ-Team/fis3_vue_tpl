@@ -38,8 +38,7 @@ define(function (require, exports, module) {
              */
             showDialog: function (url, data, position) {
                 this.$parent.showDialog(url, data, position);
-            },
+            }
         }
-    })
-    ;
+    });
 });

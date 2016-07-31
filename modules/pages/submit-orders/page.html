@@ -1,0 +1,79 @@
+<div id="submitorders">
+    <div class="place">
+        <div class="explain">
+            <div class="img">
+                <img src="../../../static/images/icon-3.jpg" alt="">
+            </div>
+            <div class="introduce">
+                <p>Castrol嘉实多 磁护合成（半合成）机油/润滑油 SN级 5W-40 4L</p>
+                <span>￥258</span>
+            </div>
+        </div>
+        <div class="number">
+            <p>购买数量</p>
+            <div class="num-e" >
+                <span>仅剩10件</span>
+                <div class="mark">-</div>
+                <div class="borreduce"></div>
+                <div class="num">1</div>
+                <div class="mark">+</div>
+                <div class="boradd"></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="Distribution">
+        <div class="dis">
+            <div class="dis-1">
+                <p>配送方式</p>
+            </div>
+            <div class="dis-2"></div>
+            <div class="dis-3">
+                <p>快递到家</p>
+                <a class="selectAddress" @click="showSelectCity">
+
+                </a>
+            </div>
+        </div>
+        <div class="adders">
+            <div class="adders-v">
+                <div class="name-call">
+                    <p>小明  18625752258</p>
+                </div>
+                <div class="address">
+                    <div class="adderss-r">
+                        <p>上海市长宁区金钟路999号虹桥国际科技广场B410</p>
+                    </div>
+                </div>
+            </div>
+            <div class="guide">
+                <img src="../../../static/images/next.png" alt="">
+            </div>
+        </div>
+
+        <div class="leave-msg">
+            <div class="buyer-l">
+               <p>买家留言</p>
+            </div>
+            <div class="message">
+                <input type="text" placeholder="选填，给商家留言 （80字内）">
+            </div>
+        </div>
+    </div>
+    <div class="price">
+        <div class="minus">
+             <p>每满￥400减￥20</p><span>-￥20</span>
+        </div>
+        <div class="balance">
+           <p>使用余额<span>￥38</span></p>
+            <i class="radio" :class="{active:isUseBalance}" @click="changeEvent"></i>
+        </div>
+    </div>
+    <div class="empty">
+       <p></p>
+    </div>
+    <div class="submit">
+        <p>还需支付<span>￥198</span></p>
+        <a href="#/pages/payforsuccess">提交</a>
+    </div>
+</div>

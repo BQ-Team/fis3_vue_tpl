@@ -6,12 +6,15 @@ a{
     text-decoration: none;
 }
 html,body{
-    font-size: 20px;
+    font-size:62.5%;
     background: #ffffff;
     height: 100%;
     display:-webkit-box;
     -webkit-box-orient:vertical;
     box-orient:vertical;//垂直排列
+}
+ul li{
+    list-style: none;
 }
 .hide{
     display: none;
@@ -25,7 +28,7 @@ html,body{
 }
 #dialogBox .dialogContent{
     background-color: white;
-    padding:10px;
+    padding:0px;
 }
 #dialogBox .positionTop{
     position: absolute;

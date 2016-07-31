@@ -1,0 +1,16 @@
+<div id="distribution-choice">
+    <div class="reach-servers">
+        <p>到店服务</p>
+        <i class="box1" :class="{active:useHome}" @click="select"></i>
+    </div>
+    <div class="come-home">
+        <p>快递到家</p>
+        <i class="radio" :class="{box2:useStore}" @click="select"></i>
+    </div>
+    <div class="empty">
+
+    </div>
+    <div class="cancel">
+        <button @click="select" value="取消">取消</button>
+    </div>
+</div>
