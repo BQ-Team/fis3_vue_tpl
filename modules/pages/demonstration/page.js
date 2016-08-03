@@ -1,24 +1,25 @@
+
 /**
  * Created by zyc on 2016/6/11.
  */
 
 define(function (require, exports, module) {
     var util = require("util");
-    var basePage = require("basePage");
+    var baseDialogPage = require("baseDialogPage");
+    var store = require("store");
     module.exports = Vue.extend({
-        title: "详情",
-        mixins: [basePage],
+        mixins: [baseDialogPage],
+        title: "",
         template: __inline("./page.html"),
         data: function () {
             return {
-                bannerList: [],
-                item:{}
+                bannerList:[]
             }
         },
         ready: function () {
-            var self=this;
+            var self = this;
             util.ajaxRequest({
-                url: "detail/bannerlist",
+                url: "services/getBannerList",
                 success: function (d) {
                     self.bannerList = d.data;
                     Vue.nextTick(function () {
@@ -28,16 +29,6 @@ define(function (require, exports, module) {
             });
         },
         attached: function () {
-            var self=this;
-            util.ajaxRequest({
-                url: "shop/shopDetail",
-                data: {
-                    page: 1
-                },
-                success: function (i) {
-                    self.item = i.data;
-                }
-            });
 
         },
         detached: function () {
@@ -55,12 +46,14 @@ define(function (require, exports, module) {
                     isLooping: 1,
                     isOverspread: 1,
                     animateTime: 800, // ms
-                    plugins: ['dot', 'zoompic',{zoomFactor: 3}]
+                    plugins: [ 'zoompic',{zoomFactor: 3}]
                 });
             },
-            showMsg: function () {
-
+            heid:function(){
+                var self = this;
+                self.hideDialog();
             }
+
         }
     });
 });

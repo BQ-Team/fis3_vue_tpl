@@ -1,62 +1,67 @@
 #success{
-  background:#ffffff;
-
+  height:100%;
+  background:#f5f5f5;
+  font-family: "Microsoft Yahei";
   .pay-success{
-    height:125px;
+    height:89px;
     background-color: #f5f5f5;
     p{
-      line-height:125px;
+      line-height:89px;
+      font-size:1.8rem;
+      color:#fd9225;
       text-align: center ;
     }
     img{
-      width:20px;
-      height:20px;
+      width:40px;
+      height:40px;
       vertical-align:middle;
     }
   }
   .adress{
     border-top:1px solid #e5e5e5;
     display:-webkit-box;
-    height:68px;
+    height:67px;
+    background-color:#ffffff;
     .fuwu{
       padding-top:10px;
       -webkit-box-flex:1;
       p {
-        font-size: .8rem;
+        font-size: 1.4rem;
         padding-left:10px;
       }
       .fu-code{
         color:#fd9225;
-        font-size:.7rem;
+        font-size:1.2rem;
         padding-top: 10px;
-      }
-      span{
-        color:#FD9225;
-        font-size:.8rem;
       }
     }
     .call{
-      border-left:1px solid #e5e5e5;
-      height:50px;
+      height:45px;
       margin-top:10px;
-      width:50px;
+      width:45px;
+      border-left:1px solid #e5e5e5;
+      background-color:#ffffff;
       a{
         height:50px;
-        width:30px;
+        width:35px;
         display:inline-block;
         img{
-          margin-top: 4px;
-          margin-left: 5px;
+          height:22px;
+          width:22px;
+          margin-top: 13px;
+          margin-left: 13px;
         }
       }
     }
   }
   .ser-code{
+    height:138px;
+    font-size:1.3rem;
+    background-color:#ffffff;
     border-top:1px solid #e5e5e5;
-    font-family: "Microsoft Yahei";
     .srr-co{
-     height:70px;
-      line-height:70px;
+     height:48px;
+      line-height:48px;
       padding-left:10px;
       color:#999999;
     }
@@ -86,23 +91,25 @@
     }
   }
   .see{
-    height:7.5rem;
     width:100%;
-    margin-top:100px;
+    height:210px;
     display: -webkit-box;
     background-color: #f5f5f5;
     a{
-      margin-top:50px;
+      margin-top:40px;
       display:block;
-      height:2.2rem;
-      width:6.4rem;
+      height:27px;
+      width:140px;
+      padding-top:8px;
       text-align: center;
       border-radius:3px;
       border:1px solid #e5e5e5;
       background-color:#ffffff;
-      font-family: "Microsoft Yahei";
       font-size:1.5rem;
       color:black;
+      span{
+        padding-top:8px;
+      }
     }
     .buy{
       -webkit-box-flex:1;

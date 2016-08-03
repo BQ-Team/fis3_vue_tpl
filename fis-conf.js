@@ -22,7 +22,10 @@ fis.hook('cmd');
 //公用部分
 var commCss = [
     '/static/css/comm.css',
-    '/node_modules/swiper/dist/css/swiper.css',
+    '/static/css/**.css',
+   '/node_modules/swiper/dist/css/swiper.css',
+    '/node_modules/islider.js/build/iSlider.css',
+    '/node_modules/dropload/dist/dropload.css',
     '/modules/**.css',
     '/modules/**.scss'
 ];
@@ -32,7 +35,9 @@ var commJs = [
     "/static/config/seaJS-config.js",
     "/node_modules/vue/dist/vue.min.js",
     "/node_modules/zepto/dist/zepto.min.js",
-    "/node_modules/swiper/dist/js/swiper.min.js",
+    "/node_modules/dropload/dist/dropload.js",
+    "/node_modules/islider.js/build/iSlider.min.js",
+    "/node_modules/islider.js/build/iSlider.plugin.dot.min.js",
     "/node_modules/director/build/director.min.js",
     '/app.js'
 ];

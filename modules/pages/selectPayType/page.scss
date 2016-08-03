@@ -14,11 +14,11 @@
       float:right;
       height:20px;
       width:20px;
-      background: url("../../../static/images/treat.png")no-repeat;
+      background:url("../../../static/images/radio-no.png")no-repeat;
       background-size:cover;
     }
     .active{
-      background:url("../../../static/images/radio-no.png")no-repeat;
+      background: url("../../../static/images/treat.png")no-repeat;
       background-size:cover;
     }
   }
@@ -50,6 +50,7 @@
   .empty{
     height:10px;
     background-color: #f5f5f5;
+    border-bottom:1px solid #e5e5e5;
   }
   .cancel{
     height:45px;

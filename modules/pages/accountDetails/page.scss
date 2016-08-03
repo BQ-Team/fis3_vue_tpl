@@ -1,0 +1,32 @@
+#distribution-choice{
+  font-family: "Microsoft Yahei";
+  .reach-servers{
+    height:25px;
+    padding: 10px;
+    border-bottom:1px solid #e5e5e5;
+    p{
+      float:left;
+      font-size:1.5rem;
+      color:#333333;
+      line-height:25px;
+    }
+    .price{
+      float:right;
+      height:20px;
+      width:20px;
+      background:url("../../../static/images/radio-no.png")no-repeat;
+      background-size:cover;
+    }
+  }
+  .empty{
+    height:10px;
+    background-color: #f5f5f5;
+    border-bottom:1px solid #e5e5e5;
+  }
+  .total{
+    height:45px;
+    text-align: center;
+    line-height: 45px;
+
+  }
+}

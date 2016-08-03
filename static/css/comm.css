@@ -9,12 +9,16 @@ html,body{
     font-size:62.5%;
     background: #ffffff;
     height: 100%;
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    box-orient:vertical;//垂直排列
+
 }
 ul li{
     list-style: none;
+}
+#main{
+    height: 100%;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    box-orient:vertical;//垂直排列
 }
 .hide{
     display: none;

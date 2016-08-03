@@ -1,12 +1,10 @@
 <div id="page2" >
-    <div class="swiper-container swiper-container-horizontal">
-        <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-2500px, 0px, 0px);">
-            <div v-for="url in bannerList" class="swiper-slide"><img v-bind:src="url" alt=""></div>
-        </div>
-        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+    <div>
+        <div class="iSlider-wrapper">
         </div>
     </div>
     <div class="information" :class="shopdetail">
+
         <div class="info">
             <p>{{item.name}}</p>
         </div>
@@ -81,7 +79,7 @@
             <a href="#/pages/submit-orders" class="buynow">立即购买</a>
         </div>
         <div class="contact">
-            <a href="#" >联系商家</a>
+            <a href="#/pages/selectStore" >联系商家</a>
         </div>
 
     </div>

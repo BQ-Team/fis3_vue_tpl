@@ -7,13 +7,15 @@
              <li>已消费</li>
          </ul>
         <ul class="status-step">
-            <li class="step-1"><span>1</span></li>
+            <li class="step"></li>
+            <li class="step-1"><div class="circular"><span>1</span></div></li>
             <li class="step-2"></li>
-            <li class="step-1"><span>2</span></li>
+            <li class="step-1"><div class="circular"><span>2</span></div></li>
             <li class="step-2"></li>
-            <li class="step-1"><span>3</span></li>
+            <li class="step-1"><div class="circular"><span>3</span></div></li>
             <li class="step-2"></li>
-            <li class="step-1"><span>4</span></li>
+            <li class="step-1"><div class="circular"><span>4</span></div></li>
+            <li class="step"></li>
         </ul>
     </div>
     <div class="details">
@@ -22,7 +24,7 @@
                   <p>定单号</p>
             </div>
             <div class="number">
-                 <p>31000016010000000011</p>
+                 <p>{{item.OrderNumber}}</p>
             </div>
             <div class="tu">
                  <p>待使用</p>
@@ -33,20 +35,23 @@
                 <img src="../../../static/images/icon-5.jpg" alt="">
             </div>
             <div class="detail-p">
-                <p>Castrol嘉实多 磁护合成（半合成）机油/润滑油 SN级 5W-40 4L</p>
+                <p>{{item.name}}</p>
                 <span>2016-05-08  12;00</span>
             </div>
             <div class="detail-n">
-                <p>X2</p>
+                <p>X{{item.number}}</p>
             </div>
         </div>
         <div class="totals">
             <div class="view">
                 <p>查看明细</p>
+                <a class="view-detail" @click="viewDetails">
+
+                </a>
             </div>
             <div class="empty"></div>
             <div class="total">
-                <p>总计<span>￥280</span></p>
+                <p>总计<span>￥{{item.money}}</span></p>
             </div>
         </div>
     </div>
@@ -63,16 +68,18 @@
             </div>
         </div>
         <div class="ser-store">
-             <p>服务门店<span>*提前出示服务码</span></p>
-        </div>
-        <div class="ser-point">
-            <div class="adders">
-                <p>上海虹桥服务点</p>
-                <p class="adder">上海市长宁区金钟路999号虹桥国际科技广场B410</p>
+             <p class="ser-st">服务门店<span>*提前出示服务码</span></p>
+            <div class="ser-point">
+                <div class="adders">
+                    <p>{{item.servicePoint}}</p>
+                    <p class="adder">{{item.address}}</p>
+                </div>
+                <div class="call"><a href="tel:18351868662"><img src="../../../static/images/call.png" alt=""></a></div>
             </div>
-            <div class="call"><a href="tel:#######"></a></div>
-
         </div>
+    </div>
+    <div class="empty1">
+
     </div>
     <div class="feedback">
         <div class="complaint">

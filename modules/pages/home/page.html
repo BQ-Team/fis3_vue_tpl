@@ -1,19 +1,16 @@
-<div id="page1">
+<div id="home">
+    <div class="iSlider-box">
+        <div class="iSlider-wrapper">
 
-    <div class="swiper-container swiper-container-horizontal">
-        <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-2500px, 0px, 0px);">
-            <div v-for="url in bannerList" class="swiper-slide"><img v-bind:src="url" alt=""></div>
-        </div>
-        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
         </div>
     </div>
     <ul class="list">
-        <li class="storeList" v-for="item in shopList" @click="goDetail(item)">
-            <div class="shopImage">
-                <img v-bind:src="item.img"  alt="">
-                    <span>仅剩10件</span>
+        <li class="storeList" v-for="item in shopList">
+            <div class="shopImage" @click="Demonstration">
+                <img :src="item.img" alt="">
+                <span>仅剩10件</span>
             </div>
-            <div class="blurb">
+            <div class="blurb" @click="goDetail(item)">
                 <p>{{item.name}}</p>
                 <div class="instruction">
                     <span class="ins-1">正品</span>

@@ -1,23 +1,21 @@
 <div id="submitorders">
-    <div class="place">
+    <div class="place" >
         <div class="explain">
             <div class="img">
                 <img src="../../../static/images/icon-3.jpg" alt="">
             </div>
             <div class="introduce">
-                <p>Castrol嘉实多 磁护合成（半合成）机油/润滑油 SN级 5W-40 4L</p>
-                <span>￥258</span>
+                <p>{{item.name}}</p>
+                <span>￥{{item.price}}</span>
             </div>
         </div>
         <div class="number">
             <p>购买数量</p>
-            <div class="num-e" >
+            <div class="num-e">
                 <span>仅剩10件</span>
-                <div class="mark">-</div>
-                <div class="borreduce"></div>
-                <div class="num">1</div>
-                <div class="mark">+</div>
-                <div class="boradd"></div>
+                <div class="borreduce" @click="reduce"></div>
+                <div class="num">{{buyNumber}}</div>
+                <div class="boradd" @click="plus"></div>
             </div>
 
         </div>
@@ -29,8 +27,8 @@
             </div>
             <div class="dis-2"></div>
             <div class="dis-3">
-                <p>快递到家</p>
-                <a class="selectAddress" @click="showSelectCity">
+                <p>{{selectDistribution|distributionFormat}}</p>
+                <a class="selectAddress" @click="DstributionType"><!--弹出框-->
 
                 </a>
             </div>
@@ -38,22 +36,24 @@
         <div class="adders">
             <div class="adders-v">
                 <div class="name-call">
-                    <p>小明  18625752258</p>
+                    <p>小明 {{item.call}}</p>
                 </div>
                 <div class="address">
                     <div class="adderss-r">
-                        <p>上海市长宁区金钟路999号虹桥国际科技广场B410</p>
+                        <p>{{Address|shopAddressFormat}}</p>
                     </div>
                 </div>
             </div>
             <div class="guide">
-                <img src="../../../static/images/next.png" alt="">
+                <a class="selectdress" @click="selectAddress">
+
+                </a>
             </div>
         </div>
 
         <div class="leave-msg">
             <div class="buyer-l">
-               <p>买家留言</p>
+                <p>买家留言</p>
             </div>
             <div class="message">
                 <input type="text" placeholder="选填，给商家留言 （80字内）">
@@ -62,15 +62,15 @@
     </div>
     <div class="price">
         <div class="minus">
-             <p>每满￥400减￥20</p><span>-￥20</span>
+            <p>每满￥400减￥20</p><span>-￥20</span>
         </div>
         <div class="balance">
-           <p>使用余额<span>￥38</span></p>
+            <p>使用余额<span>￥{{item.balance}}</span></p>
             <i class="radio" :class="{active:isUseBalance}" @click="changeEvent"></i>
         </div>
     </div>
     <div class="empty">
-       <p></p>
+        <p></p>
     </div>
     <div class="submit">
         <p>还需支付<span>￥198</span></p>

@@ -12,7 +12,8 @@ define(function (require, exports, module) {
         data: function () {
             return {
                 bannerList: [],
-                shopList: []
+                shopList: [],
+                page: 1
             }
         },
         ready: function () {
@@ -23,23 +24,12 @@ define(function (require, exports, module) {
                 success: function (d) {
                     self.bannerList = d.data;
                     Vue.nextTick(function () {
-                        self.swiperInit();
+                        self.iSliderInit();
                     });
                 }
             });
 
-            util.ajaxRequest({
-                url: "serevers/shopList",
-                data: {
-                    page: 1
-                },
-                success: function (e) {
-                    self.shopList = e.data;
-                   /* Vue.nextTick(function () {
-                        self.droploadInit();
-                    });*/
-                }
-            });
+            self.droploadInit();
         },
         attached: function () {
 
@@ -49,19 +39,24 @@ define(function (require, exports, module) {
         },
         methods: {
             //
-            swiperInit: function () {
-                  new Swiper(".swiper-container", {
-                    direction: "horizontal",
-                    loop: true,
-                    autoplay: 3000,
-                    autoplayDisableOnInteraction: false,
-                    pagination: ".swiper-pagination"
+            iSliderInit: function () {
+                var self = this;
+                var list = $.map(self.bannerList, function (url) {
+                    return {content: url};
                 });
-            },
+                var slider = new iSlider({
+                    dom: self.$el.getElementsByClassName("iSlider-wrapper")[0],
+                    data: list,
+                    isLooping: 1,
+                    isOverspread: 1,
+                    animateTime: 800,
+                    plugins: ['dot']
+                });
 
+            },
             droploadInit: function () {
                 var self = this;
-                self.$parent.dropload({
+                $(self.$el).dropload({
                     loadUpFn: function (dropload) {
                         console.log("下拉");
                         self.getStoreAddress(true, dropload);
@@ -74,23 +69,34 @@ define(function (require, exports, module) {
             },
             getStoreAddress: function (isReload, dropload) {
                 var self = this;
-                if (isReload)self.data.page = 1;
+                if (isReload)self.page = 1;
                 util.ajaxRequest({
-                    url: "services/getStoreAddress",
+                    url: "serevers/shopList",
                     data: {
-                        page: self.data.page
+                        page: self.page
                     },
                     success: function (d) {
-                        self.dataBind(".storeItemTpl", d.data, ".storeListBox", isReload);//模板，数据，目标，
-                        dropload.resetload();//重置上拉下拉控件
-                        if (!isReload) {
-                            self.data.page++;
+                        if (isReload) {
+                            self.shopList = d.data;
+                        } else {
+                            self.shopList = self.shopList.concat(d.data);
                         }
+                        if (!isReload) {
+                            self.page++;
+                        }
+                        setTimeout(function () {
+                            if (!d.data || d.data.length == 0)dropload.noData();//显示暂无数据
+                            dropload.resetload();//重置上拉下拉控件
+                        }, 1000);
                     }
                 });
             },
             goDetail: function (item) {
                 this.$parent.showPage("pages/detail", item.id);
+            },
+            Demonstration: function () {
+                var self = this;
+                this.showDialog("pages/demonstration", {}, "center");
             }
         }
     });

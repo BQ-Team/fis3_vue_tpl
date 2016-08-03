@@ -1,6 +1,74 @@
 #selectCity{
-
-
-
-
+  font-family: "Microsoft Yahei";
+  .reach-servers{
+    height:40px;
+    padding: 10px;
+    border-bottom:1px solid #e5e5e5;
+    p{
+      float:left;
+      font-size:1.5rem;
+      color:#333333;
+      line-height:15px;
+    }
+    i{
+      float:right;
+      height:20px;
+      width:20px;
+      margin-top: -10px;
+      background:url("../../../static/images/radio-no.png")no-repeat;
+      background-size:cover;
+    }
+    .active{
+      background: url("../../../static/images/treat.png")no-repeat;
+      background-size:cover;
+    }
+  }
+  .come-home{
+    height:40px;
+    padding: 10px;
+    font-size:1.5rem;
+    border-bottom:1px solid #e5e5e5;
+    p{
+      float:left;
+      color:#333333;
+      line-height:15px;
+    }
+    .radio{
+      float:right;
+      height:20px;
+      width:20px;
+      margin-top: -10px;
+      background: url("../../../static/images/treat.png")no-repeat;
+      background-size:cover;
+    }
+    .box2{
+      float:right;
+      height:20px;
+      width:20px;
+      margin-top: -10px;
+      background:url("../../../static/images/radio-no.png")no-repeat;
+      background-size:cover;
+    }
+  }
+  .empty{
+    height:10px;
+    background-color: #f5f5f5;
+    border-bottom:1px solid #e5e5e5;
+  }
+  .cancel{
+    height:45px;
+    text-align: center;
+    line-height: 45px;
+    button{
+      height:45px;
+      width:100%;
+      text-align: center;
+      line-height: 45px;
+      background-color: #ffffff;
+      font-size:1.6rem;
+      font-family: "Microsoft Yahei";
+      color:#666666;
+      border:none;
+    }
+  }
 }

@@ -1,16 +1,12 @@
 <div id="distribution-choice">
-    <div class="reach-servers">
-        <p>到店服务</p>
-        <i class="box1" :class="{active:useHome}" @click="select"></i>
-    </div>
-    <div class="come-home">
-        <p>快递到家</p>
-        <i class="radio" :class="{box2:useStore}" @click="select"></i>
+    <div class="reach-servers"  v-for="(key, name) in distributionType">
+        <p>{{name}}</p>
+        <i class="box1" :class="{active:selectDistribution==key}" @click="select(key)"></i>
     </div>
     <div class="empty">
 
     </div>
     <div class="cancel">
-        <button @click="select" value="取消">取消</button>
+        <button @click="select(null)" value="取消">取消</button>
     </div>
 </div>

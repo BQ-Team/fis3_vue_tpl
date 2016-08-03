@@ -52,32 +52,29 @@
         span {
           color: #FF6365;
         }
-        .mark {
-          position: relative;
-          float: right;
-
-        }
         .borreduce {
-          float: right;
-          margin-right: -14px;
-          margin-top: 26px;
-          height: 17px;
-          width: 17px;
-          border: 1px solid #e5e5e5;
+         display: inline-block;
+          margin-right: 1px;
+          margin-top: 16px;
+          height: 18px;
+          width: 18px;
+          background:url("../../../static/images/reduce.png")no-repeat;
+          vertical-align: sub;
         }
         .boradd {
-          float: right;
-          margin-top: 26px;
-          height: 17px;
-          width: 17px;
-          border: 1px solid #e5e5e5;
+          display: inline-block;
+          margin-top: 16px;
+          height: 18px;
+          width: 18px;
+          vertical-align: sub;
+          background:url("../../../static/images/plus.png")no-repeat;
         }
       }
       .num {
         background-color:#ffffff;
-        height: 15px;
+        height: 18px;
         width: 15px;
-        float: right;
+        display: inline-block;
       }
     }
 
@@ -133,11 +130,14 @@
       }
       .guide {
         width: 45px;
-        img {
-          width: 15px;
+        a {
           height: 30px;
+          width: 15px;
+          display: block;
           margin-left:20px;
           margin-top: 27px;
+          background: url("../../../static/images/next.png") no-repeat;
+          background-size: cover;
         }
       }
     }

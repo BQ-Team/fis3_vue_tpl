@@ -1,34 +1,78 @@
 define(function (require, exports, module) {
     var util = require("util");
     var basePage = require("basePage");
+    var store = require("store");
     module.exports = Vue.extend({
         title: "详情",
         mixins: [basePage],
         template: __inline("./page.html"),
         data: function () {
             return {
-                isUseBalance:false
+                isUseBalance: false,
+                buyNumber: 1,
+                selectDistribution: 1,
+                item:{},
+                Address:1
+            }
+        },
+        filters: {
+            distributionFormat:function(value){
+                return store.distributionType[value];
+            },
+            shopAddressFormat:function(value){
+                return store.shopAddress[value];
             }
         },
         ready: function () {
-            /*this.changeEvent();*/
+
         },
         attached: function () {
-
-            util.logger.log(this.title+" 進入,參數", this.params);
+            var self=this;
+            util.ajaxRequest({
+                url: "shop/submitOrders",
+                data: {
+                    page: 1
+                },
+                success: function (i) {
+                    self.item = i.data;
+                }
+            });
+            util.logger.log(this.title + " 進入,參數", this.params);
         },
         detached: function () {
 
         },
         methods: {
-            showSelectCity: function () {
-                this.showDialog("pages/selectPayType",{},"bottom");
+            DstributionType: function () {
+                var self = this;
+                this.showDialog("pages/selectPayType", {
+                    selectDistribution:self.selectDistribution,
+                    ok:function(newKey){
+                        self.selectDistribution = newKey;
+                    }
+                }, "bottom");
             },
-            changeEvent:function(e){
-
+            selectAddress: function () {
+                var self = this;
+                this.showDialog("pages/selectCity", {
+                    Address:self.Address,
+                    ok:function(newKey){
+                        self.Address = newKey;
+                    }
+                }, "bottom");
+            },
+            changeEvent: function (e) {
                 this.isUseBalance = !this.isUseBalance;
+            },
+            reduce: function () {
+                if( this.buyNumber>1){
+                    this.buyNumber--;
+                }
+            },
+            plus: function () {
+                this.buyNumber++;
             }
         }
-
     });
 });
+
