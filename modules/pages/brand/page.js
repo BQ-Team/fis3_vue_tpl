@@ -1,5 +1,5 @@
 /**
- * Created by zyc on 2016/6/11.
+ * Created by zyc on 2016/7/30.
  */
 define(function (require, exports, module) {
     var basePage = require('basePage');
@@ -24,7 +24,14 @@ define(function (require, exports, module) {
         detached: function () {
 
         },
+        methods: {
+            showMsg: function (item, index, e) {
+                item.id = index;
+                this.showPage("pages/list", item);
+                this.selectIndex = index;
+            }
 
+        }
     })
 });
 

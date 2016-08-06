@@ -9,13 +9,15 @@ define(function (require, exports, module) {
 
     //全局公共组件
     var components = [
-        "/modules/components/header/page"
+        "/modules/extend/filters.js",//过滤器
+        "/modules/extend/directive.js",//自定义指令
+        "/modules/components/header/page"//头部
     ];
     require.async(components, function () {
 
         // 创建全局根组件app
         var app = new Vue({
-            el: 'body',
+            el: 'body',      //绑定
             data: function () {
                 return {
                     currentView: "",//当前主体组件名称
@@ -26,12 +28,12 @@ define(function (require, exports, module) {
                     dialogPositionClass: "" //弹框组件位置
                 };
             },
-            components: {}
+            components: {}   //公共组件
         });
 
         //地址和参数转换成hashUrl
         function dataToUrl(url, param) {
-            param = typeof param == "object" ? encodeURIComponent(JSON.stringify(param)) : param;
+            param = typeof param == "object" ? encodeURIComponent(JSON.stringify(param)) : param;  //加密
             return '{0}/{1}'.format(url, param);//返回路径 ，参数
         }
 
@@ -44,7 +46,7 @@ define(function (require, exports, module) {
             require.async([moduleJs], function (mod) {
                 app.currentView = moduleUrl;
                 app.currentViewHash = window.location.hash;     //hash
-                app.pageParams = !data ? undefined : JSON.parse(decodeURIComponent(data)); //参数
+                app.pageParams = !data ? undefined : JSON.parse(decodeURIComponent(data)); //参数解码
                 if (!app.$options.components[moduleUrl]) {
                     app.$options.components[moduleUrl] = mod;
                 }
@@ -74,7 +76,7 @@ define(function (require, exports, module) {
         };
 
         var router = new Router(routesConfig);
-        var homePage = sessionStorage.getItem("currentMoudleHash") || "/pages/brand";
+        var homePage = sessionStorage.getItem("currentMoudleHash") || "/pages/home";
         router.setRoute(homePage);//设置默认首页
         router.init();//路由初始化
 
