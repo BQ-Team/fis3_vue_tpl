@@ -3,7 +3,6 @@
  */
 define(function (require, exports, module) {
 
-    //全局对象
     module.exports = {
 
         loginUser: {},
