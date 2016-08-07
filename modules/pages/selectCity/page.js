@@ -19,7 +19,6 @@ define(function (require, exports, module) {
         },
         ready: function () {
             var self = this;
-
         },
         attached: function () {
             this.Address  = this.params.Address;

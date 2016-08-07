@@ -1,14 +1,14 @@
 {
-  "name": "fis3_vue_tpl",
+  "name": "fis3_vue_tpl_shop",
   "version": "1.0.0",
-  "description": "基于vue的前端模块化项目模板",
+  "description": "基于vue的前端模块化项目--商城",
   "main": "app.js",
   "scripts": {
     "serverStart": "fis3 server start "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BQ-Team/fis3_vue_tpl.git"
+    "url": "git+https://github.com/ModeYapu/fis3_vue_tpl_shop.git"
   },
   "keywords": [
     "vue",
@@ -17,11 +17,12 @@
   "author": "chonglu.wang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BQ-Team/fis3_vue_tpl/issues"
+    "url": "https://github.com/ModeYapu/fis3_vue_tpl_shop/issues"
   },
-  "homepage": "https://github.com/BQ-Team/fis3_vue_tpl#readme",
+  "homepage": "https://github.com/ModeYapu/fis3_vue_tpl_shop#readme",
   "dependencies": {
     "director": "^1.2.8",
+    "islider.js": "^2.1.7",
     "vue": "^1.0.26",
     "zepto": "^1.2.0"
   }
