@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fis3_vue_tpl_shop.iml" filepath="$PROJECT_DIR$/.idea/fis3_vue_tpl_shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/fis3_vue_tpl.iml" filepath="$PROJECT_DIR$/.idea/fis3_vue_tpl.iml" />
     </modules>
   </component>
 </project>

@@ -93,10 +93,6 @@ define(function (require, exports, module) {
             },
             goDetail: function (item) {
                 this.$parent.showPage("pages/detail", item.id);
-            },
-            Demonstration: function () {
-                var self = this;
-                this.showDialog("pages/demonstration", {}, "center");
             }
         }
     });

@@ -2,7 +2,7 @@
  * Created by zyc on 2016/6/27.
  */
 //设置不打包文件
-fis.set('project.ignore', ["\..*", '.git/**', 'node_modules/**', "README.md", "package.json", "npm-debug.log", 'fis-conf.js']);
+fis.set('project.ignore', ["\..*", '.git/**', "README.md", "package.json", "npm-debug.log", 'fis-conf.js']);
 
 //加载loader插件
 fis.match('::packager', {
